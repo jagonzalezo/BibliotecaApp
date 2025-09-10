@@ -41,49 +41,54 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(131, 95);
+            label1.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(144, 63);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(65, 17);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "Usuario";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(135, 162);
+            label2.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(130, 136);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(93, 17);
             label2.TabIndex = 1;
-            label2.Text = "label2";
+            label2.Text = "Contraseña";
             // 
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(227, 93);
+            textBox1.Location = new Point(229, 61);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(175, 23);
             textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(227, 162);
+            textBox2.Location = new Point(229, 130);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(175, 23);
             textBox2.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(171, 230);
+            button1.BackColor = SystemColors.Highlight;
+            button1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(173, 198);
             button1.Name = "button1";
-            button1.Size = new Size(140, 23);
+            button1.Size = new Size(140, 28);
             button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Login";
+            button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(25, 95);
+            pictureBox1.Location = new Point(22, 45);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 129);
             pictureBox1.TabIndex = 5;
@@ -94,7 +99,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(461, 342);
+            ClientSize = new Size(461, 251);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(textBox2);
