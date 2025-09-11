@@ -129,6 +129,7 @@
             AGlibro.TabIndex = 7;
             AGlibro.Text = "Agregar Libro";
             AGlibro.UseVisualStyleBackColor = true;
+            AGlibro.Click += AGlibro_Click;
             // 
             // button2
             // 
