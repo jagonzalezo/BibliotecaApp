@@ -1,3 +1,4 @@
+using System.Drawing;
 namespace BibliotecaApp
 {
     public partial class LoginForm : Form
@@ -14,11 +15,19 @@ namespace BibliotecaApp
                 (textBox1.Text == "user" && textBox2.Text == "1234") ||
                 (textBox1.Text == "guest" && textBox2.Text == "guest"))
             {
-                MessageBox.Show("Login correcto");
+                //MessageBox.Show("Login correcto");
+                
+                MessageBox.Show("Inicio de sesión correcto", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Login exitoso pasa al MainForm de gestion de Biblioteca
+                MainForm main = new MainForm();
+                main.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Error login");
+                //MessageBox.Show("Error login");
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
