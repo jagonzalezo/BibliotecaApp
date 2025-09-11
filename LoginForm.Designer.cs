@@ -33,7 +33,7 @@
             label2 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            button1 = new Button();
+            btnLogin = new Button();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -70,20 +70,21 @@
             // 
             textBox2.Location = new Point(229, 130);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(175, 23);
             textBox2.TabIndex = 3;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(173, 198);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 28);
-            button1.TabIndex = 4;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = SystemColors.Highlight;
+            btnLogin.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = SystemColors.ControlLightLight;
+            btnLogin.Location = new Point(173, 198);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(140, 28);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -94,20 +95,20 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
-            // Form1
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(461, 251);
             Controls.Add(pictureBox1);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Cursor = Cursors.Hand;
-            Name = "Form1";
+            Name = "LoginForm";
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -120,7 +121,7 @@
         private Label label2;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Button button1;
+        private Button btnLogin;
         private PictureBox pictureBox1;
     }
 }
