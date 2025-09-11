@@ -47,9 +47,10 @@
             // btnGuardar
             // 
             btnGuardar.BackColor = SystemColors.ActiveCaption;
-            btnGuardar.Location = new Point(79, 257);
+            btnGuardar.Location = new Point(113, 428);
+            btnGuardar.Margin = new Padding(4, 5, 4, 5);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.Size = new Size(107, 38);
             btnGuardar.TabIndex = 0;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -58,9 +59,10 @@
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.LightCoral;
-            btnCancelar.Location = new Point(276, 257);
+            btnCancelar.Location = new Point(394, 428);
+            btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(107, 38);
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -69,92 +71,102 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(68, 92);
+            label1.Location = new Point(94, 143);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(86, 15);
+            label1.Size = new Size(130, 25);
             label1.TabIndex = 2;
             label1.Text = "Titulo del Libro";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(117, 129);
+            label2.Location = new Point(167, 205);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(37, 15);
+            label2.Size = new Size(57, 25);
             label2.TabIndex = 3;
             label2.Text = "Autor";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(122, 165);
+            label3.Location = new Point(174, 265);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(32, 15);
+            label3.Size = new Size(50, 25);
             label3.TabIndex = 4;
             label3.Text = "ISBN";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(41, 202);
+            label4.Location = new Point(53, 326);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(113, 15);
+            label4.Size = new Size(171, 25);
             label4.TabIndex = 5;
             label4.Text = "Cantidad disponible";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(160, 84);
+            txtNombre.Location = new Point(229, 140);
+            txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(191, 23);
+            txtNombre.Size = new Size(271, 31);
             txtNombre.TabIndex = 6;
             // 
             // txtAutor
             // 
-            txtAutor.Location = new Point(160, 121);
+            txtAutor.Location = new Point(229, 202);
+            txtAutor.Margin = new Padding(4, 5, 4, 5);
             txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(191, 23);
+            txtAutor.Size = new Size(271, 31);
             txtAutor.TabIndex = 7;
             // 
             // txtISBN
             // 
-            txtISBN.Location = new Point(160, 157);
+            txtISBN.Location = new Point(229, 262);
+            txtISBN.Margin = new Padding(4, 5, 4, 5);
             txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(191, 23);
+            txtISBN.Size = new Size(271, 31);
             txtISBN.TabIndex = 8;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(160, 194);
+            txtCantidad.Location = new Point(229, 323);
+            txtCantidad.Margin = new Padding(4, 5, 4, 5);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(62, 23);
+            txtCantidad.Size = new Size(87, 31);
             txtCantidad.TabIndex = 9;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(122, 19);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(174, 32);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(119, 18);
+            label5.Size = new Size(160, 29);
             label5.TabIndex = 10;
             label5.Text = "Agregar Libro";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(17, 20);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(58, 52);
+            pictureBox1.Size = new Size(83, 87);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // AddLibro
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(402, 315);
+            ClientSize = new Size(574, 525);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(txtCantidad);
@@ -167,6 +179,7 @@
             Controls.Add(label1);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "AddLibro";
             Text = "AddLibro";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
