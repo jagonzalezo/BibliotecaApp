@@ -84,7 +84,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(403, 106);
+            label3.Location = new Point(468, 106);
             label3.Name = "label3";
             label3.Size = new Size(163, 17);
             label3.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(710, 106);
+            label4.Location = new Point(835, 106);
             label4.Name = "label4";
             label4.Size = new Size(188, 17);
             label4.TabIndex = 3;
@@ -105,23 +105,23 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 138);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(298, 216);
+            dataGridView1.Size = new Size(343, 216);
             dataGridView1.TabIndex = 4;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(342, 138);
+            dataGridView2.Location = new Point(376, 138);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(293, 216);
+            dataGridView2.Size = new Size(350, 216);
             dataGridView2.TabIndex = 5;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(658, 138);
+            dataGridView3.Location = new Point(748, 138);
             dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(294, 216);
+            dataGridView3.Size = new Size(348, 216);
             dataGridView3.TabIndex = 6;
             // 
             // AGlibro
@@ -146,25 +146,27 @@
             // 
             // AGuser
             // 
-            AGuser.Location = new Point(376, 377);
+            AGuser.Location = new Point(468, 377);
             AGuser.Name = "AGuser";
             AGuser.Size = new Size(101, 23);
             AGuser.TabIndex = 10;
             AGuser.Text = "Agregar Usuario";
             AGuser.UseVisualStyleBackColor = true;
+            AGuser.Click += AGuser_Click;
             // 
             // ELeUser
             // 
-            ELeUser.Location = new Point(483, 377);
+            ELeUser.Location = new Point(577, 377);
             ELeUser.Name = "ELeUser";
             ELeUser.Size = new Size(109, 23);
             ELeUser.TabIndex = 11;
             ELeUser.Text = "Eliminar Usuario";
             ELeUser.UseVisualStyleBackColor = true;
+            ELeUser.Click += ELeUser_Click;
             // 
             // button7
             // 
-            button7.Location = new Point(693, 377);
+            button7.Location = new Point(844, 377);
             button7.Name = "button7";
             button7.Size = new Size(75, 23);
             button7.TabIndex = 13;
@@ -173,7 +175,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(806, 377);
+            button8.Location = new Point(980, 377);
             button8.Name = "button8";
             button8.Size = new Size(75, 23);
             button8.TabIndex = 14;
@@ -193,7 +195,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(343, 82);
+            pictureBox2.Location = new Point(408, 82);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(54, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -203,7 +205,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(658, 82);
+            pictureBox3.Location = new Point(768, 81);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(51, 51);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -222,7 +224,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(343, 357);
+            label6.Location = new Point(408, 357);
             label6.Name = "label6";
             label6.Size = new Size(278, 15);
             label6.TabIndex = 19;
@@ -232,7 +234,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(60, 454);
+            label7.Location = new Point(69, 441);
             label7.Name = "label7";
             label7.Size = new Size(82, 18);
             label7.TabIndex = 20;
@@ -240,7 +242,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(60, 484);
+            button1.Location = new Point(69, 468);
             button1.Name = "button1";
             button1.Size = new Size(111, 23);
             button1.TabIndex = 21;
@@ -252,7 +254,7 @@
             button2.BackColor = Color.LightCoral;
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(815, 476);
+            button2.Location = new Point(980, 454);
             button2.Name = "button2";
             button2.Size = new Size(93, 37);
             button2.TabIndex = 22;
@@ -264,7 +266,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(977, 544);
+            ClientSize = new Size(1120, 506);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label7);

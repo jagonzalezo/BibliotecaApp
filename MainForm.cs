@@ -117,10 +117,10 @@ namespace BibliotecaApp
             GuardarLibros();
 
         }
-        
+
         // Parte de usuarios
 
-    private void CargarUsuarios()
+        private void CargarUsuarios()
         {
             if (File.Exists(rutaArchivoUsuarios))
             {
@@ -138,7 +138,7 @@ namespace BibliotecaApp
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = usuarios;
         }
-        private void AGusuario_Click(object sender, EventArgs e)
+        private void AGuser_Click(object sender, EventArgs e)
         {
             using (var formAdd = new AddUsuario())
             {
@@ -150,7 +150,7 @@ namespace BibliotecaApp
                 }
             }
         }
-        private void btnEliminarU_Click(object sender, EventArgs e)
+        private void ELeUser_Click(object sender, EventArgs e)
         {
             if (dataGridView2.CurrentRow == null || dataGridView2.CurrentRow.Index < 0)
             {
@@ -180,5 +180,8 @@ namespace BibliotecaApp
         {
             GuardarUsuarios();
         }
+
+              
     }
 }
+
