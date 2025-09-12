@@ -37,16 +37,16 @@
             dataGridView2 = new DataGridView();
             dataGridView3 = new DataGridView();
             AGlibro = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            btnEliminar = new Button();
+            AGuser = new Button();
+            ELeUser = new Button();
             button7 = new Button();
             button8 = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -108,22 +108,22 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(342, 139);
+            dataGridView2.Location = new Point(342, 138);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(271, 215);
+            dataGridView2.Size = new Size(293, 216);
             dataGridView2.TabIndex = 5;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(658, 139);
+            dataGridView3.Location = new Point(658, 138);
             dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(258, 215);
+            dataGridView3.Size = new Size(294, 216);
             dataGridView3.TabIndex = 6;
             // 
             // AGlibro
             // 
-            AGlibro.Location = new Point(12, 377);
+            AGlibro.Location = new Point(60, 377);
             AGlibro.Name = "AGlibro";
             AGlibro.Size = new Size(91, 23);
             AGlibro.TabIndex = 7;
@@ -131,50 +131,33 @@
             AGlibro.UseVisualStyleBackColor = true;
             AGlibro.Click += AGlibro_Click;
             // 
-            // button2
+            // btnEliminar
             // 
-            button2.Location = new Point(125, 377);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 8;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnEliminar.Location = new Point(157, 377);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(104, 23);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.Text = "Eliminar Registro";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // button3
+            // AGuser
             // 
-            button3.Location = new Point(235, 377);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 9;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            AGuser.Location = new Point(376, 377);
+            AGuser.Name = "AGuser";
+            AGuser.Size = new Size(101, 23);
+            AGuser.TabIndex = 10;
+            AGuser.Text = "Agregar Usuario";
+            AGuser.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // ELeUser
             // 
-            button4.Location = new Point(342, 377);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 10;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(447, 377);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 11;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(538, 377);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 12;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            ELeUser.Location = new Point(483, 377);
+            ELeUser.Name = "ELeUser";
+            ELeUser.Size = new Size(109, 23);
+            ELeUser.TabIndex = 11;
+            ELeUser.Text = "Eliminar Usuario";
+            ELeUser.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -224,22 +207,40 @@
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(25, 357);
+            label5.Name = "label5";
+            label5.Size = new Size(278, 15);
+            label5.TabIndex = 18;
+            label5.Text = "Seleccione Linea y Doble Click para modificar datos";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(343, 357);
+            label6.Name = "label6";
+            label6.Size = new Size(278, 15);
+            label6.TabIndex = 19;
+            label6.Text = "Seleccione Linea y Doble Click para modificar datos";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(954, 450);
+            ClientSize = new Size(977, 425);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button8);
             Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(ELeUser);
+            Controls.Add(AGuser);
+            Controls.Add(btnEliminar);
             Controls.Add(AGlibro);
             Controls.Add(dataGridView3);
             Controls.Add(dataGridView2);
@@ -270,15 +271,15 @@
         private DataGridView dataGridView2;
         private DataGridView dataGridView3;
         private Button AGlibro;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button btnEliminar;
+        private Button AGuser;
+        private Button ELeUser;
         private Button button7;
         private Button button8;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Label label5;
+        private Label label6;
     }
 }
