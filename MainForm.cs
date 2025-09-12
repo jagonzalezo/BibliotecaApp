@@ -15,11 +15,11 @@ namespace BibliotecaApp
 {
     public partial class MainForm : Form
     {
-        //Vista para libros
+        //Memoria para libros
         private List<Libro> libros = new List<Libro>();
         private string rutaArchivo = "libros.json";
 
-        //Vista para usuarios
+        //Memoria para usuarios
         private List<Usuario> usuarios = new List<Usuario>();
         private string rutaArchivoUsuarios = "usuarios.json";
         public MainForm()
