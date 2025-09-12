@@ -47,6 +47,9 @@
             pictureBox3 = new PictureBox();
             label5 = new Label();
             label6 = new Label();
+            label7 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -225,12 +228,46 @@
             label6.TabIndex = 19;
             label6.Text = "Seleccione Linea y Doble Click para modificar datos";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(60, 454);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 18);
+            label7.TabIndex = 20;
+            label7.Text = "Reportes";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(60, 484);
+            button1.Name = "button1";
+            button1.Size = new Size(111, 23);
+            button1.TabIndex = 21;
+            button1.Text = "Generar Reporte";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LightCoral;
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(815, 476);
+            button2.Name = "button2";
+            button2.Size = new Size(93, 37);
+            button2.TabIndex = 22;
+            button2.Text = "Salir de la App";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(977, 425);
+            ClientSize = new Size(977, 544);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(pictureBox3);
@@ -281,5 +318,8 @@
         private PictureBox pictureBox3;
         private Label label5;
         private Label label6;
+        private Label label7;
+        private Button button1;
+        private Button button2;
     }
 }
