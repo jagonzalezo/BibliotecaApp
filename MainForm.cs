@@ -15,20 +15,37 @@ namespace BibliotecaApp
 {
     public partial class MainForm : Form
     {
+        //Vista para libros
         private List<Libro> libros = new List<Libro>();
         private string rutaArchivo = "libros.json";
+
+        //Vista para usuarios
+        private List<Usuario> usuarios = new List<Usuario>();
+        private string rutaArchivoUsuarios = "usuarios.json";
         public MainForm()
         {
             InitializeComponent();
 
+            // Configuración del DataGridView para libros
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
-            CargarLibros();
-            RefrescarGrid();
-        }
 
+            // Configuración del DataGridView para usuarios
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.MultiSelect = false;
+            dataGridView2.AutoGenerateColumns = true;
+            dataGridView2.CellEndEdit += dataGridView2_CellEndEdit;
+
+            CargarLibros();
+            CargarUsuarios();
+            RefrescarGridLibros();
+            RefrescarGridUsuarios();
+
+
+        }
+        // Parte de libros
         private void CargarLibros()
         {
             if (File.Exists(rutaArchivo))
@@ -44,7 +61,7 @@ namespace BibliotecaApp
             File.WriteAllText(rutaArchivo, json);
         }
 
-        private void RefrescarGrid()
+        private void RefrescarGridLibros()
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = libros;
@@ -59,7 +76,7 @@ namespace BibliotecaApp
                 {
 
                     libros.Add(formAdd.NuevoLibro);
-                    RefrescarGrid();
+                    RefrescarGridLibros();
                     GuardarLibros(); // se guardan los cambios
                 }
             }
@@ -89,7 +106,7 @@ namespace BibliotecaApp
             if (confirm == DialogResult.Yes)
             {
                 libros.Remove(libroSeleccionado);
-                RefrescarGrid();
+                RefrescarGridLibros();
                 GuardarLibros();
             }
         }
@@ -100,6 +117,68 @@ namespace BibliotecaApp
             GuardarLibros();
 
         }
+        
+        // Parte de usuarios
 
+    private void CargarUsuarios()
+        {
+            if (File.Exists(rutaArchivoUsuarios))
+            {
+                string json = File.ReadAllText(rutaArchivoUsuarios);
+                usuarios = JsonConvert.DeserializeObject<List<Usuario>>(json) ?? new List<Usuario>();
+            }
+        }
+        private void GuardarUsuarios()
+        {
+            string json = JsonConvert.SerializeObject(usuarios, Formatting.Indented);
+            File.WriteAllText(rutaArchivoUsuarios, json);
+        }
+        private void RefrescarGridUsuarios()
+        {
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = usuarios;
+        }
+        private void AGusuario_Click(object sender, EventArgs e)
+        {
+            using (var formAdd = new AddUsuario())
+            {
+                if (formAdd.ShowDialog() == DialogResult.OK)
+                {
+                    usuarios.Add(formAdd.NuevoUsuario);
+                    RefrescarGridUsuarios();
+                    GuardarUsuarios(); // se guardan los cambios
+                }
+            }
+        }
+        private void btnEliminarU_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.CurrentRow == null || dataGridView2.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("Seleccione un usuario válido para eliminar.",
+                                "Aviso",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+            var usuarioSeleccionado = dataGridView2.CurrentRow.DataBoundItem as Usuario;
+            if (usuarioSeleccionado == null) return;
+            var confirm = MessageBox.Show(
+                $"¿Está seguro de eliminar \"{usuarioSeleccionado.Nombre}\"?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (confirm == DialogResult.Yes)
+            {
+                usuarios.Remove(usuarioSeleccionado);
+                RefrescarGridUsuarios();
+                GuardarUsuarios();
+            }
+        }
+        // Evento para guardar al terminar de editar una celda en la tabla
+        private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            GuardarUsuarios();
+        }
     }
 }
