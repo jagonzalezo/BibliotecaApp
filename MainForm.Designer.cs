@@ -40,8 +40,7 @@
             btnEliminar = new Button();
             AGuser = new Button();
             ELeUser = new Button();
-            button7 = new Button();
-            button8 = new Button();
+            AGprestamo = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -50,6 +49,7 @@
             label7 = new Label();
             button1 = new Button();
             button2 = new Button();
+            ELePrestamo = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -64,7 +64,7 @@
             label1.BackColor = SystemColors.Highlight;
             label1.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(343, 19);
+            label1.Location = new Point(424, 25);
             label1.Name = "label1";
             label1.Size = new Size(226, 24);
             label1.TabIndex = 0;
@@ -74,7 +74,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(81, 106);
+            label2.Location = new Point(105, 106);
             label2.Name = "label2";
             label2.Size = new Size(144, 17);
             label2.TabIndex = 1;
@@ -111,9 +111,9 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(376, 138);
+            dataGridView2.Location = new Point(381, 138);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(350, 216);
+            dataGridView2.Size = new Size(341, 216);
             dataGridView2.TabIndex = 5;
             // 
             // dataGridView3
@@ -164,28 +164,19 @@
             ELeUser.UseVisualStyleBackColor = true;
             ELeUser.Click += ELeUser_Click;
             // 
-            // button7
+            // AGprestamo
             // 
-            button7.Location = new Point(844, 377);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 13;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(980, 377);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 23);
-            button8.TabIndex = 14;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            AGprestamo.Location = new Point(748, 377);
+            AGprestamo.Name = "AGprestamo";
+            AGprestamo.Size = new Size(124, 23);
+            AGprestamo.TabIndex = 13;
+            AGprestamo.Text = "Realizar Prestamo";
+            AGprestamo.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 82);
+            pictureBox1.Location = new Point(25, 82);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -261,6 +252,15 @@
             button2.Text = "Salir de la App";
             button2.UseVisualStyleBackColor = false;
             // 
+            // ELePrestamo
+            // 
+            ELePrestamo.Location = new Point(933, 377);
+            ELePrestamo.Name = "ELePrestamo";
+            ELePrestamo.Size = new Size(163, 23);
+            ELePrestamo.TabIndex = 14;
+            ELePrestamo.Text = "Eliminar Registro Prestamo";
+            ELePrestamo.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -275,8 +275,8 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(button8);
-            Controls.Add(button7);
+            Controls.Add(ELePrestamo);
+            Controls.Add(AGprestamo);
             Controls.Add(ELeUser);
             Controls.Add(AGuser);
             Controls.Add(btnEliminar);
@@ -313,8 +313,7 @@
         private Button btnEliminar;
         private Button AGuser;
         private Button ELeUser;
-        private Button button7;
-        private Button button8;
+        private Button AGprestamo;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
@@ -323,5 +322,6 @@
         private Label label7;
         private Button button1;
         private Button button2;
+        private Button ELePrestamo;
     }
 }
