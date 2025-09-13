@@ -221,7 +221,7 @@ namespace BibliotecaApp
                 {
                     //Buscar libro seleccionado en la lista.
                     var libroPrestado = libros.FirstOrDefault(l => l.Nombre == formAdd.NuevoPrestamo.Libro);
-                    if (libroPrestado != null)
+                    if (libroPrestado == null)
                     {
 
                         MessageBox.Show("El libro seleccionado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -240,6 +240,8 @@ namespace BibliotecaApp
                     RefrescarGridLibros();
                     GuardarLibros();
                     GuardarPrestamos();
+
+                    MessageBox.Show("Préstamo registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -288,6 +290,20 @@ namespace BibliotecaApp
         {
             GuardarPrestamos();
         }
+
+        private void ExitApp_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show(
+                "¿Está seguro de que desea salir de la aplicación?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (confirm == DialogResult.Yes)
+            {
+              Application.Exit();
+            }
     }
+}
 }
 

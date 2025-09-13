@@ -48,7 +48,7 @@
             label6 = new Label();
             label7 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            ExitApp = new Button();
             ELePrestamo = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -241,17 +241,18 @@
             button1.Text = "Generar Reporte";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ExitApp
             // 
-            button2.BackColor = Color.LightCoral;
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(980, 454);
-            button2.Name = "button2";
-            button2.Size = new Size(93, 37);
-            button2.TabIndex = 22;
-            button2.Text = "Salir de la App";
-            button2.UseVisualStyleBackColor = false;
+            ExitApp.BackColor = Color.LightCoral;
+            ExitApp.Cursor = Cursors.Hand;
+            ExitApp.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ExitApp.Location = new Point(980, 454);
+            ExitApp.Name = "ExitApp";
+            ExitApp.Size = new Size(93, 37);
+            ExitApp.TabIndex = 22;
+            ExitApp.Text = "Salir de la App";
+            ExitApp.UseVisualStyleBackColor = false;
+            ExitApp.Click += ExitApp_Click;
             // 
             // ELePrestamo
             // 
@@ -269,7 +270,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1120, 506);
-            Controls.Add(button2);
+            Controls.Add(ExitApp);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -323,7 +324,7 @@
         private Label label6;
         private Label label7;
         private Button button1;
-        private Button button2;
+        private Button ExitApp;
         private Button ELePrestamo;
     }
 }
