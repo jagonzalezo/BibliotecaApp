@@ -37,7 +37,6 @@
             dtpDevolucion = new DateTimePicker();
             label3 = new Label();
             label4 = new Label();
-            chkDevuelto = new CheckBox();
             btnGuardar = new Button();
             btnCancelar = new Button();
             pictureBox1 = new PictureBox();
@@ -111,20 +110,10 @@
             label4.TabIndex = 7;
             label4.Text = "Fecha Devolucion";
             // 
-            // chkDevuelto
-            // 
-            chkDevuelto.AutoSize = true;
-            chkDevuelto.Location = new Point(512, 214);
-            chkDevuelto.Name = "chkDevuelto";
-            chkDevuelto.Size = new Size(73, 19);
-            chkDevuelto.TabIndex = 8;
-            chkDevuelto.Text = "Devuelto";
-            chkDevuelto.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
             btnGuardar.BackColor = SystemColors.ActiveCaption;
-            btnGuardar.Location = new Point(261, 307);
+            btnGuardar.Location = new Point(261, 247);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 9;
@@ -135,7 +124,7 @@
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.LightCoral;
-            btnCancelar.Location = new Point(512, 307);
+            btnCancelar.Location = new Point(510, 247);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 10;
@@ -169,12 +158,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 320);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
-            Controls.Add(chkDevuelto);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(dtpDevolucion);
@@ -200,7 +188,6 @@
         private DateTimePicker dtpDevolucion;
         private Label label3;
         private Label label4;
-        private CheckBox chkDevuelto;
         private Button btnGuardar;
         private Button btnCancelar;
         private PictureBox pictureBox1;
