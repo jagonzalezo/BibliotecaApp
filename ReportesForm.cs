@@ -1,17 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using OxyPlot;
 using OxyPlot.Series;
 using OxyPlot.WindowsForms;
 using OxyPlot.Axes;
+using BibliotecaApp.Models;
 
 namespace BibliotecaApp
 {
     public partial class ReportesForm : Form
     {
-        public ReportesForm()
+        private List<Prestamo> prestamos;
+        public ReportesForm(List<Prestamo> prestamos)
         {
             InitializeComponent();
+            this.prestamos = prestamos ?? new List<Prestamo>();
             GenerarGraficos();
         }
 
@@ -68,6 +73,12 @@ namespace BibliotecaApp
             // Agregar gráficos al formulario
             this.Controls.Add(chartUsuarios);
             this.Controls.Add(chartLibros);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

@@ -53,6 +53,7 @@ namespace BibliotecaApp
             CargarPrestamos();
             RefrescarGridLibros();
             RefrescarGridUsuarios();
+            RefrescarGridPrestamos();
 
 
         }
@@ -236,10 +237,11 @@ namespace BibliotecaApp
                     libroPrestado.CantidadDisponible--;
 
                     prestamos.Add(formAdd.NuevoPrestamo);
-                    RefrescarGridPrestamos();
+
                     RefrescarGridLibros();
                     GuardarLibros();
                     GuardarPrestamos();
+                    RefrescarGridPrestamos();
 
                     MessageBox.Show("Préstamo registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

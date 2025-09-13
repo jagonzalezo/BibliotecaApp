@@ -29,46 +29,31 @@
         private void InitializeComponent()
         {
             btnCerrar = new Button();
-            label1 = new Label();
             SuspendLayout();
             // 
             // btnCerrar
             // 
-            btnCerrar.Location = new Point(455, 377);
+            btnCerrar.Location = new Point(561, 498);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(75, 23);
             btnCerrar.TabIndex = 0;
             btnCerrar.Text = "Cerrar";
             btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Highlight;
-            label1.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(245, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(201, 22);
-            label1.TabIndex = 1;
-            label1.Text = "Reporte Estadisticas";
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // ReportesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            ClientSize = new Size(648, 533);
             Controls.Add(btnCerrar);
             Name = "ReportesForm";
             Text = "ReportesForm";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button btnCerrar;
-        private Label label1;
     }
 }
