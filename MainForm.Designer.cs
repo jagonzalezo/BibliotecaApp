@@ -47,7 +47,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            button1 = new Button();
+            GenReport = new Button();
             ExitApp = new Button();
             ELePrestamo = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -226,20 +226,20 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(69, 441);
+            label7.Location = new Point(69, 426);
             label7.Name = "label7";
             label7.Size = new Size(82, 18);
             label7.TabIndex = 20;
             label7.Text = "Reportes";
             // 
-            // button1
+            // GenReport
             // 
-            button1.Location = new Point(69, 468);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 23);
-            button1.TabIndex = 21;
-            button1.Text = "Generar Reporte";
-            button1.UseVisualStyleBackColor = true;
+            GenReport.Location = new Point(69, 447);
+            GenReport.Name = "GenReport";
+            GenReport.Size = new Size(111, 23);
+            GenReport.TabIndex = 21;
+            GenReport.Text = "Generar Reporte";
+            GenReport.UseVisualStyleBackColor = true;
             // 
             // ExitApp
             // 
@@ -271,7 +271,7 @@
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1120, 506);
             Controls.Add(ExitApp);
-            Controls.Add(button1);
+            Controls.Add(GenReport);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -323,7 +323,7 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private Button button1;
+        private Button GenReport;
         private Button ExitApp;
         private Button ELePrestamo;
     }
