@@ -301,9 +301,16 @@ namespace BibliotecaApp
             );
             if (confirm == DialogResult.Yes)
             {
-              Application.Exit();
+                Application.Exit();
             }
+        }
+
+        private void GenReport_Click(object sender, EventArgs e)
+        {
+            using ReportesForm form = new ReportesForm(prestamos);
+                
+            form.ShowDialog(); 
+        }
     }
-}
 }
 

@@ -41,6 +41,7 @@
             btnCancelar = new Button();
             pictureBox1 = new PictureBox();
             label5 = new Label();
+            chkDevuelto = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             // btnGuardar
             // 
             btnGuardar.BackColor = SystemColors.ActiveCaption;
-            btnGuardar.Location = new Point(261, 247);
+            btnGuardar.Location = new Point(261, 307);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 9;
@@ -124,7 +125,7 @@
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.LightCoral;
-            btnCancelar.Location = new Point(510, 247);
+            btnCancelar.Location = new Point(512, 307);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 10;
@@ -154,15 +155,26 @@
             label5.TabIndex = 12;
             label5.Text = "Gestion de Prestamos";
             // 
+            // chkDevuelto
+            // 
+            chkDevuelto.AutoSize = true;
+            chkDevuelto.Location = new Point(512, 214);
+            chkDevuelto.Name = "chkDevuelto";
+            chkDevuelto.Size = new Size(73, 19);
+            chkDevuelto.TabIndex = 8;
+            chkDevuelto.Text = "Devuelto";
+            chkDevuelto.UseVisualStyleBackColor = true;
+            // 
             // PrestamoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 320);
+            ClientSize = new Size(800, 450);
             Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
+            Controls.Add(chkDevuelto);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(dtpDevolucion);
@@ -192,5 +204,6 @@
         private Button btnCancelar;
         private PictureBox pictureBox1;
         private Label label5;
+        private CheckBox chkDevuelto;
     }
 }

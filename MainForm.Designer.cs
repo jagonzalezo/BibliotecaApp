@@ -240,6 +240,7 @@
             GenReport.TabIndex = 21;
             GenReport.Text = "Generar Reporte";
             GenReport.UseVisualStyleBackColor = true;
+            GenReport.Click += GenReport_Click;
             // 
             // ExitApp
             // 
