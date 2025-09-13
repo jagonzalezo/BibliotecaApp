@@ -172,6 +172,7 @@
             AGprestamo.TabIndex = 13;
             AGprestamo.Text = "Realizar Prestamo";
             AGprestamo.UseVisualStyleBackColor = true;
+            AGprestamo.Click += AGprestamo_Click;
             // 
             // pictureBox1
             // 
@@ -260,6 +261,7 @@
             ELePrestamo.TabIndex = 14;
             ELePrestamo.Text = "Eliminar Registro Prestamo";
             ELePrestamo.UseVisualStyleBackColor = true;
+            ELePrestamo.Click += ELePrestamo_Click;
             // 
             // MainForm
             // 

@@ -22,6 +22,10 @@ namespace BibliotecaApp
         //Memoria para usuarios
         private List<Usuario> usuarios = new List<Usuario>();
         private string rutaArchivoUsuarios = "usuarios.json";
+
+        //Memoria para prestamos
+        private List<Prestamo> prestamos = new List<Prestamo>();
+        private string rutaArchivoPrestamos = "prestamos.json";
         public MainForm()
         {
             InitializeComponent();
@@ -38,8 +42,15 @@ namespace BibliotecaApp
             dataGridView2.AutoGenerateColumns = true;
             dataGridView2.CellEndEdit += dataGridView2_CellEndEdit;
 
+            // Configuración del DataGridView para prestamos
+            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView3.MultiSelect = false;
+            dataGridView3.AutoGenerateColumns = true;
+            dataGridView3.CellEndEdit += dataGridView3_CellEndEdit;
+
             CargarLibros();
             CargarUsuarios();
+            CargarPrestamos();
             RefrescarGridLibros();
             RefrescarGridUsuarios();
 
@@ -77,7 +88,7 @@ namespace BibliotecaApp
 
                     libros.Add(formAdd.NuevoLibro);
                     RefrescarGridLibros();
-                    GuardarLibros(); // se guardan los cambios
+                    GuardarLibros();
                 }
             }
 
@@ -146,7 +157,7 @@ namespace BibliotecaApp
                 {
                     usuarios.Add(formAdd.NuevoUsuario);
                     RefrescarGridUsuarios();
-                    GuardarUsuarios(); // se guardan los cambios
+                    GuardarUsuarios();
                 }
             }
         }
@@ -180,8 +191,103 @@ namespace BibliotecaApp
         {
             GuardarUsuarios();
         }
+        // Parte de prestamos
+        private void CargarPrestamos()
+        {
+            if (File.Exists(rutaArchivoPrestamos))
+            {
+                string json = File.ReadAllText(rutaArchivoPrestamos);
+                prestamos = JsonConvert.DeserializeObject<List<Prestamo>>(json) ?? new List<Prestamo>();
+            }
+        }
+        private void GuardarPrestamos()
+        {
+            string json = JsonConvert.SerializeObject(prestamos, Formatting.Indented);
+            File.WriteAllText(rutaArchivoPrestamos, json);
+        }
+        private void RefrescarGridPrestamos()
+        {
+            dataGridView3.DataSource = null;
+            dataGridView3.DataSource = prestamos;
+        }
 
-              
+        private void AGprestamo_Click(object sender, EventArgs e)
+        {
+            using (var formAdd = new PrestamoForm(
+                usuarios.Select(u => u.Nombre).ToArray(),
+                libros.Select(l => l.Nombre).ToArray()))
+            {
+                if (formAdd.ShowDialog() == DialogResult.OK)
+                {
+                    //Buscar libro seleccionado en la lista.
+                    var libroPrestado = libros.FirstOrDefault(l => l.Nombre == formAdd.NuevoPrestamo.Libro);
+                    if (libroPrestado != null)
+                    {
+
+                        MessageBox.Show("El libro seleccionado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+
+                    }
+                    if (libroPrestado.CantidadDisponible <= 0)
+                    {
+                        MessageBox.Show("No hay copias disponibles de este libro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    libroPrestado.CantidadDisponible--;
+
+                    prestamos.Add(formAdd.NuevoPrestamo);
+                    RefrescarGridPrestamos();
+                    RefrescarGridLibros();
+                    GuardarLibros();
+                    GuardarPrestamos();
+                }
+            }
+
+        }
+
+        private void ELePrestamo_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.CurrentRow == null || dataGridView3.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("Seleccione un préstamo válido para eliminar.",
+                                "Aviso",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+            var prestamoSeleccionado = dataGridView3.CurrentRow.DataBoundItem as Prestamo;
+            if (prestamoSeleccionado == null) return;
+            var confirm = MessageBox.Show(
+                $"¿Está seguro de eliminar el préstamo de \"{prestamoSeleccionado.Libro}\" a \"{prestamoSeleccionado.Usuario}\"?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (confirm == DialogResult.Yes)
+            {
+                prestamos.Remove(prestamoSeleccionado);
+                // Devolver el libro si no ha sido devuelto
+                if (!prestamoSeleccionado.Devuelto)
+                {
+                    var libroDevuelto = libros.FirstOrDefault(l => l.Nombre == prestamoSeleccionado.Libro);
+                    if (libroDevuelto != null)
+                    {
+                        libroDevuelto.CantidadDisponible++;
+                        RefrescarGridLibros();
+                        GuardarLibros();
+                    }
+                }
+                RefrescarGridPrestamos();
+                GuardarPrestamos();
+            }
+
+
+        }
+        // Evento para guardar al terminar de editar una celda en la tabla
+        private void dataGridView3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            GuardarPrestamos();
+        }
     }
 }
 
